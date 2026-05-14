@@ -1,0 +1,54 @@
+{
+  "manifest_version": "1.0",
+  "agent_id": "ccos-cost-optimizer-v1",
+  "name": "Cost Optimizer",
+  "description": "Optimizes execution plans for cost, latency, and redundancy. Applies caching, deduplication, and cheaper skill-path selection.",
+  "version": "1.0.0",
+  "owner": "crystal-clear-os",
+  "category": "optimization",
+
+  "capabilities": [
+    "cost_estimation",
+    "latency_estimation",
+    "skill_path_optimization",
+    "caching_strategy",
+    "deduplication",
+    "fallback_cost_routing"
+  ],
+
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "execution_graph": {
+        "type": "array",
+        "items": { "type": "object" }
+      },
+      "context": { "type": "string" }
+    },
+    "required": ["execution_graph"]
+  },
+
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "optimized_graph": {
+        "type": "array",
+        "items": { "type": "object" }
+      },
+      "estimated_cost": { "type": "number" },
+      "estimated_latency_ms": { "type": "number" },
+      "cache_hits": { "type": "number" }
+    },
+    "required": ["optimized_graph"]
+  },
+
+  "permissions": {
+    "read_only": true,
+    "allowed_apis": [],
+    "max_latency_ms": 2000
+  },
+
+  "dependencies": ["ccos-plan-generator-v1"],
+
+  "reputation_weight": 0.87
+}

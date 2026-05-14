@@ -1,0 +1,4 @@
+- Over-aggressive deduplication
+- Removing required safety steps
+- Incorrect cost estimation
+- Cache poisoning

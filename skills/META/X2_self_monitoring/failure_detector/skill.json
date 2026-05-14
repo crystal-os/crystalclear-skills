@@ -1,0 +1,52 @@
+{
+  "manifest_version": "1.0",
+  "agent_id": "ccos-failure-detector-v1",
+  "name": "Failure Detector",
+  "description": "Monitors skill outputs, detects failures, contradictions, schema violations, unsafe results, and infinite loops. Acts as the OS immune system.",
+  "version": "1.0.0",
+  "owner": "crystal-clear-os",
+  "category": "self-monitoring",
+
+  "capabilities": [
+    "schema_validation",
+    "contradiction_detection",
+    "hallucination_detection",
+    "loop_detection",
+    "safety_violation_detection",
+    "truth_verifier_integration"
+  ],
+
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "skill_output": { "type": "object" },
+      "expected_schema": { "type": "object" },
+      "context": { "type": "string" }
+    },
+    "required": ["skill_output", "expected_schema"]
+  },
+
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "valid": { "type": "boolean" },
+      "issues": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "requires_fallback": { "type": "boolean" },
+      "requires_hitl": { "type": "boolean" }
+    },
+    "required": ["valid", "issues"]
+  },
+
+  "permissions": {
+    "read_only": true,
+    "allowed_apis": [],
+    "max_latency_ms": 1500
+  },
+
+  "dependencies": ["ccos-truth-verifier-v1"],
+
+  "reputation_weight": 0.9
+}

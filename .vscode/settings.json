@@ -1,0 +1,33 @@
+{
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.5,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "html"
+  },
+  "explorer.compactFolders": false,
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.smoothScrolling": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "window.zoomLevel": 0
+}

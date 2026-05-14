@@ -1,0 +1,15 @@
+[
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.terminal.runSelectedText"
+  },
+  {
+    "key": "cmd+shift+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Run UI"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen"
+  }
+]

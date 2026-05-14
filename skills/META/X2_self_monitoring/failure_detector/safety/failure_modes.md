@@ -1,0 +1,5 @@
+- Missing required fields
+- Contradictory outputs
+- Unsafe content
+- Infinite loop detected
+- Truth Verifier trust score < 75

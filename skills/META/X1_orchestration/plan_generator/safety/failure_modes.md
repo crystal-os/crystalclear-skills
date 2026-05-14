@@ -1,0 +1,4 @@
+- No matching skills for goal
+- Circular execution graph
+- Missing fallback
+- Invalid skill reference

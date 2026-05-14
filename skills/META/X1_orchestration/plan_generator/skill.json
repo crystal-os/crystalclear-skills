@@ -1,0 +1,65 @@
+{
+  "manifest_version": "1.0",
+  "agent_id": "ccos-plan-generator-v1",
+  "name": "Plan Generator",
+  "description": "Interprets user goals and generates deterministic multi-step execution plans using the Skill OS. Selects skills, orders them, and defines parameters. Integrates safety, truth verification, and fallback logic.",
+  "version": "1.0.0",
+  "owner": "crystal-clear-os",
+  "category": "orchestration",
+
+  "capabilities": [
+    "goal_interpretation",
+    "skill_selection",
+    "execution_graph_generation",
+    "fallback_routing",
+    "cost_aware_planning",
+    "truth_verifier_integration"
+  ],
+
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "goal": { "type": "string" },
+      "context": { "type": "string" },
+      "constraints": {
+        "type": "object",
+        "properties": {
+          "max_cost": { "type": "number" },
+          "max_latency_ms": { "type": "number" }
+        }
+      }
+    },
+    "required": ["goal"]
+  },
+
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "execution_graph": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "skill": { "type": "string" },
+            "inputs": { "type": "object" },
+            "requires_truth_verification": { "type": "boolean" },
+            "fallback": { "type": "string" }
+          }
+        }
+      },
+      "estimated_cost": { "type": "number" },
+      "estimated_latency_ms": { "type": "number" }
+    },
+    "required": ["execution_graph"]
+  },
+
+  "permissions": {
+    "read_only": true,
+    "allowed_apis": [],
+    "max_latency_ms": 2000
+  },
+
+  "dependencies": ["ccos-truth-verifier-v1"],
+
+  "reputation_weight": 0.88
+}
